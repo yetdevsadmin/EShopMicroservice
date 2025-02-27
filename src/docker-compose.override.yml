@@ -1,7 +1,7 @@
 version: '3.4'
 
 services:
-  catalog.api:
+  catalogdb:
     container_name: catalogdb
     environment:
       - POSTGRES_USER=postgres
@@ -12,5 +12,3 @@ services:
       - "5432:5432"
     volumes:
       - postgres_catalog:/var/lib/postgresql/data/
-
-    
