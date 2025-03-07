@@ -1,8 +1,8 @@
 ﻿namespace Basket.API.Basket.DeleteBasket;
 
-public record DeleteBasketCommand(string UserName) : ICommand<DeleteBasketResult>;
+//public record DeleteBasketRequest(string UserName) : ICommand<DeleteBasketResult>;
 
-public record DeleteBasketResult(bool IsSuccess);
+public record DeleteBasketResponse(bool IsSuccess);
 
 public class DeleteBasketEndpoint : ICarterModule
 {
@@ -12,16 +12,15 @@ public class DeleteBasketEndpoint : ICarterModule
         {
             var result = await sender.Send(new DeleteBasketCommand(userName));
 
-            var response = result.Adapt<DeleteBasketResult>();
+            var response = result.Adapt<DeleteBasketResponse>();
 
             return Results.Ok(response);
         })
          .WithName("DeleteBasket")
          .Produces<DeleteBasketResult>(StatusCodes.Status200OK)
          .ProducesProblem(StatusCodes.Status400BadRequest)
+         .ProducesProblem(StatusCodes.Status404NotFound)
          .WithSummary("Delete the basket for a user")
          .WithDescription("Delete the basket for a user");
     }
 }   
-{
-}
