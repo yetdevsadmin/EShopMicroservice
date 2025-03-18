@@ -4,7 +4,7 @@ public record Payment
 {
     public string? CardName { get; set; } = default!;
     public string CardNumber { get; set; } = default!;
-    public DateTime Expiration { get; set; } = default!;
+    public string Expiration { get; set; } = default!;
     public string CVV { get; set; } = default!;
     public int PaymentMethod { get; set; } = default!;
 
@@ -12,7 +12,7 @@ public record Payment
     {
     }
 
-    private Payment(string? cardName, string cardNumber, DateTime expiration, string cvv, int paymentMethod)
+    private Payment(string? cardName, string cardNumber, string expiration, string cvv, int paymentMethod)
     {
         CardName = cardName;
         CardNumber = cardNumber;
@@ -21,7 +21,7 @@ public record Payment
         PaymentMethod = paymentMethod;
     }
 
-    public static Payment of(string? cardName, string cardNumber, DateTime expiration, string cvv, int paymentMethod)
+    public static Payment of(string? cardName, string cardNumber, string expiration, string cvv, int paymentMethod)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(cardName);
         ArgumentException.ThrowIfNullOrWhiteSpace(cardNumber);

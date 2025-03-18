@@ -3,7 +3,7 @@ namespace Ordering.Domain.ValueObjects;
 
 public record Address
 {
-    public string FixtureName { get; set; } = default!;
+    public string FirstName { get; set; } = default!;
     public string LastName { get; set; } = default!;
     public string? EmailAddress { get; set; } = default!;
     public string AddressLine { get; set; } = default!;
@@ -15,9 +15,9 @@ public record Address
     { 
     }
 
-    private Address(string fixtureName, string lastName, string? emailAddress, string addressLine, string country, string state, string zipCode)
+    private Address(string firstName, string lastName, string? emailAddress, string addressLine, string country, string state, string zipCode)
     {
-        FixtureName = fixtureName;
+        FirstName = firstName;
         LastName = lastName;
         EmailAddress = emailAddress;
         AddressLine = addressLine;
