@@ -26,16 +26,12 @@ public record Address
         ZipCode = zipCode;
     }
 
-    public static Address of(string fixtureName, string lastName, string? emailAddress, string addressLine, string country, string state, string zipCode)
+    public static Address Of(string fixtureName, string lastName, string? emailAddress, string addressLine, string country, string state, string zipCode)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(emailAddress);
         ArgumentException.ThrowIfNullOrWhiteSpace(addressLine);
       
         return new Address(fixtureName, lastName, emailAddress, addressLine, country, state, zipCode);
     }
-
-    public static Address Of(string firstName, string lastName, string emailAddress, string addressLine, string country, object state, object zipCode)
-    {
-        throw new NotImplementedException();
-    }
+   
 }

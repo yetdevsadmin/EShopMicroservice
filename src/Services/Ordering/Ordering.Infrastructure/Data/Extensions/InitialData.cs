@@ -22,8 +22,8 @@ internal class InitialData
     {
         get
         {
-            var address1 = Address.of("Mehmet", "Ozkaya", "mehmet@gmail.com", "Bahcelievler No:4", "Turkey", "Istanbul", "38050");
-            var address2 = Address.of("Jane", "Doe", "jane.doe@gmail.com", "Broadway No:1", "England", "Nottingham", "08050");
+            var address1 = Address.Of("Mehmet", "Ozkaya", "mehmet@gmail.com", "Bahcelievler No:4", "Turkey", "Istanbul", "38050");
+            var address2 = Address.Of("Jane", "Doe", "jane.doe@gmail.com", "Broadway No:1", "England", "Nottingham", "08050");
 
             var payment1 = Payment.Of("Mehmet", "5555555555554444", "12/28", "355", 1);
             var payment2 = Payment.Of("Jane", "8885555555554444", "06/30", "222", 2);
