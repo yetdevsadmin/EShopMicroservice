@@ -18,8 +18,8 @@ public class DeleteOrder : ICarterModule
         })
         .WithName("DeleteOrder")
         .Produces<DeleteOrderResponse>(StatusCodes.Status200OK)
-        .ProducesProblem(StatusCodes.Status404NotFound)
         .ProducesProblem(StatusCodes.Status400BadRequest)
+        .ProducesProblem(StatusCodes.Status404NotFound)
         .WithSummary("Deletes an order")
         .WithDescription("Deletes an order in the system");
     }
