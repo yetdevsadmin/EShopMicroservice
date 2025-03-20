@@ -13,7 +13,7 @@ public class OrderItemConfiguration : IEntityTypeConfiguration<OrderItem>
 
         builder.Property(c => c.Id).HasConversion(
              OrderItemId => OrderItemId.Value,
-             dbId => OrderItemId.of(dbId));
+             dbId => OrderItemId.Of(dbId));
 
         builder.HasOne<Product>()
                     .WithMany()

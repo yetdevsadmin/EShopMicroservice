@@ -6,7 +6,7 @@ public record OrderItemId
 
     private OrderItemId(Guid value) => Value = value;
 
-    public static OrderItemId of(Guid value)
+    public static OrderItemId Of(Guid value)
     {
         ArgumentNullException.ThrowIfNull(value);
         if (value == Guid.Empty)

@@ -7,7 +7,7 @@ public record OrderName
 
     private OrderName(string value) => Value = value;
 
-    public static OrderName of(string value)
+    public static OrderName Of(string value)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(value);
         ArgumentOutOfRangeException.ThrowIfNotEqual(value.Length, DefaultLength, "Order name must be 5 characters long");

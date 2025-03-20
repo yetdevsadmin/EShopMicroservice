@@ -14,7 +14,7 @@ public class OrderConfiguration : IEntityTypeConfiguration<Order>
 
         builder.Property(c => c.Id).HasConversion(
             OrderId => OrderId.Value,
-            dbId => OrderId.of(dbId));
+            dbId => OrderId.Of(dbId));
 
         builder.HasOne<Customer>()
                     .WithMany()

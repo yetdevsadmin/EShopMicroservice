@@ -6,5 +6,5 @@ public record AddressDto(
     string EmailAddress, 
     string AddressLine,
     string Country,
-    string state,
-    string zipcode);
+    string State,
+    string ZipCode);

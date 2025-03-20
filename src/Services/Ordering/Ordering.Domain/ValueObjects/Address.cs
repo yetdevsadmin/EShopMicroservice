@@ -33,4 +33,9 @@ public record Address
       
         return new Address(fixtureName, lastName, emailAddress, addressLine, country, state, zipCode);
     }
+
+    public static Address Of(string firstName, string lastName, string emailAddress, string addressLine, string country, object state, object zipCode)
+    {
+        throw new NotImplementedException();
+    }
 }
